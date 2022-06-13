@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Trinity Store</title>
+        <title>IIBook</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
         <link rel="stylesheet" href="assets/css/main.css" />
@@ -25,7 +25,7 @@
 
                     <!-- Logo -->
                     <a href="index.html" class="logo">
-                        <span class="fa fa-book"></span> <span class="title">Book Store</span>
+                        <span class="fa fa-book"></span> <span class="title">IIBOOK</span>
                     </a>
 
                     <!-- Nav -->
