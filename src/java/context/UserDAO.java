@@ -55,7 +55,7 @@ public class UserDAO {
             String sql="Select * from [User] where username='"+key+"' AND password='"+pass+"'";
             rs=stm.executeQuery(sql);
             while(rs.next()){
-                String userid = rs.getString(1);
+                int userid = rs.getInt(1);
                 String name = rs.getString(2);
                 String gender = rs.getBoolean(3)? "Male" : "Female";
                 SimpleDateFormat f = new SimpleDateFormat("dd/mm/yyyy");
@@ -63,7 +63,8 @@ public class UserDAO {
                 String email = rs.getString(5);
                 String phone = rs.getString(6);
                 String address = rs.getString(7);
-                User u = new User(userid, name, gender, dob, email, phone, address, key, pass);
+                boolean is_super = rs.getBoolean(10);
+                User u = new User(userid, name, gender, dob, email, phone, address, key, pass,is_super);
                 return u;
             }
         }catch(Exception e){

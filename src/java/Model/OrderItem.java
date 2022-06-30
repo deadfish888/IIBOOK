@@ -7,12 +7,12 @@ package Model;
 
 /* @author ACER */
 public class OrderItem {
-    private String orderid;
-    private String bookid;
+    private int orderid;
+    private int bookid;
     private int quantity;
     private float price;
 
-    public OrderItem(String orderid, String bookid, int quantity, float price) {
+    public OrderItem(int orderid, int bookid, int quantity, float price) {
         this.orderid = orderid;
         this.bookid = bookid;
         this.quantity = quantity;
@@ -27,19 +27,19 @@ public class OrderItem {
         this.price = price;
     }
 
-    public String getOrderid() {
+    public int getOrderid() {
         return orderid;
     }
 
-    public void setOrderid(String orderid) {
+    public void setOrderid(int orderid) {
         this.orderid = orderid;
     }
 
-    public String getBookid() {
+    public int getBookid() {
         return bookid;
     }
 
-    public void setBookid(String bookid) {
+    public void setBookid(int bookid) {
         this.bookid = bookid;
     }
 

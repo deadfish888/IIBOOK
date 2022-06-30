@@ -5,11 +5,12 @@
 package Model;
 
 public class Book {
-    private String bookid, title, author, type;
+    private int bookid;
+    private String title, author, type;
     private float price;
     private String discounttype, image;
 
-    public Book(String bookid, String title, String author, String type, float price, String discounttype, String image) {
+    public Book(int bookid, String title, String author, String type, float price, String discounttype, String image) {
         this.bookid = bookid;
         this.title = title;
         this.author = author;
@@ -19,11 +20,11 @@ public class Book {
         this.image = image;
     }
 
-    public String getBookid() {
+    public int getBookid() {
         return bookid;
     }
 
-    public void setBookid(String bookid) {
+    public void setBookid(int bookid) {
         this.bookid = bookid;
     }
 

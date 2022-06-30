@@ -5,12 +5,10 @@
 
 package Model;
 
-import java.util.Date;
-
 /* @author ACER */
 public class Order {
-    private String orderid;
-    private String userid;
+    private int orderid;
+    private int userid;
     private String orderdate;
     private float subtotal;
     private float shipping;
@@ -18,7 +16,7 @@ public class Order {
     private String shipper;
     private String status;
 
-    public Order(String orderid, String userid, String orderdate, float subtotal, float shipping, float total, String shipper, String status) {
+    public Order(int orderid, int userid, String orderdate, float subtotal, float shipping, float total, String shipper, String status) {
         this.orderid = orderid;
         this.userid = userid;
         this.orderdate = orderdate;
@@ -37,19 +35,19 @@ public class Order {
         this.status = status;
     }
 
-    public String getOrderid() {
+    public int getOrderid() {
         return orderid;
     }
 
-    public void setOrderid(String orderid) {
+    public void setOrderid(int orderid) {
         this.orderid = orderid;
     }
 
-    public String getUserid() {
+    public int getUserid() {
         return userid;
     }
 
-    public void setUserid(String userid) {
+    public void setUserid(int userid) {
         this.userid = userid;
     }
 

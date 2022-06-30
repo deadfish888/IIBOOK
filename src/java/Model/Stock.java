@@ -7,11 +7,11 @@ package Model;
 
 /* @author ACER */
 public class Stock {
-    private String bookid;
+    private int bookid;
     private int used;
     private int total;
 
-    public Stock(String bookid, int used, int total) {
+    public Stock(int bookid, int used, int total) {
         this.bookid = bookid;
         this.used = used;
         this.total = total;
@@ -25,11 +25,11 @@ public class Stock {
         this.total = total;
     }
 
-    public String getBookid() {
+    public int getBookid() {
         return bookid;
     }
 
-    public void setBookid(String bookid) {
+    public void setBookid(int bookid) {
         this.bookid = bookid;
     }
 

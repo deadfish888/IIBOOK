@@ -7,10 +7,10 @@ package Model;
 
 /* @author ACER */
 public class BookIntro {
-    private String bookid;
+    private int bookid;
     private String intro;
 
-    public BookIntro(String bookid, String intro) {
+    public BookIntro(int bookid, String intro) {
         this.bookid = bookid;
         this.intro = intro;
     }
@@ -23,11 +23,11 @@ public class BookIntro {
         this.intro = intro;
     }
 
-    public String getBookid() {
+    public int getBookid() {
         return bookid;
     }
 
-    public void setBookid(String bookid) {
+    public void setBookid(int bookid) {
         this.bookid = bookid;
     }
     
