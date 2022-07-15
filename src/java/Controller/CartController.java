@@ -33,13 +33,12 @@ public class CartController extends HttpServlet {
             if (service == null) { // call controller direct
                 service = "showCart";
             }
-            ArrayList<Book> books;
+            ArrayList<Book> books= new ArrayList<>();
             OrderDAO dao = new OrderDAO();
             HttpSession session = request.getSession();
             Enumeration em = session.getAttributeNames();
             switch (service) {
                 default:
-                    books = new ArrayList<>();
                     while (em.hasMoreElements()) {
                         try {
                             String key = em.nextElement().toString();
@@ -67,12 +66,10 @@ public class CartController extends HttpServlet {
                         book.setQuantity(book.getQuantity() + 1);
                     }
                     session.setAttribute(bookID, book);
-                    request.setAttribute("book", book.getTitle());
                     dispath(request, response, "index.jsp");
                     break;
                 case "update":
                     int quantity = Integer.parseInt(request.getParameter("quantity"));
-                    books = new ArrayList<>();
                     book = (Book) session.getAttribute(bookID);
                     book.setQuantity(quantity);
                     while (em.hasMoreElements()) {
@@ -87,7 +84,6 @@ public class CartController extends HttpServlet {
                     break;
                 case "remove":
                     session.removeAttribute(bookID);
-                    books = new ArrayList<>();
                     em = session.getAttributeNames();
                     while (em.hasMoreElements()) {
                         try {
@@ -128,6 +124,24 @@ public class CartController extends HttpServlet {
                             String phone = request.getParameter("phone");
                             String address = request.getParameter("address");
                             String shipper = request.getParameter("shipper");
+                            boolean checkcart=false;
+                            while(em.hasMoreElements()){
+                                try {
+                                    String key = em.nextElement().toString();
+                                    Book get = (Book) session.getAttribute(key);
+                                    checkcart=true;
+                                    break;
+                                } catch (Exception e) {
+                                    continue;
+                                }
+                            }
+                            if(!checkcart){
+                                request.setAttribute("error", "Please add book to cart first!");
+                                request.setAttribute("books", books);
+                                dispath(request, response, "/views/cart/cart.jsp");
+                                return;
+                            }
+                            em = session.getAttributeNames();
                             int orderid = dao.addOrderGetId(user.getId(), LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME), shipper);
                             dao.addCustomer(orderid, user.getId(), name, email, phone, address);
                             while (em.hasMoreElements()) {

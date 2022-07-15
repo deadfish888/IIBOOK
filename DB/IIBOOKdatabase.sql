@@ -73,7 +73,8 @@ CREATE TABLE [dbo].[Book](
 	[is_sale] bit,
 	[discount] smallint,
 	[image] [varchar](500),
-	[description] nvarchar(2000)
+	[description] nvarchar(2000),
+	[views] int
  CONSTRAINT [PK_book] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -171,6 +172,8 @@ REFERENCES [dbo].[User] ([id])
 GO
 ALter table [dbo].[Customer] with check add foreign key ([orderid])
 REFERENCES [dbo].[Order] ([id])
+GO
+ALTER TABLE [dbo].[Book] ADD  DEFAULT (0) FOR [views]
 GO
 ------
 ALTER TABLE [dbo].[User] ADD  DEFAULT (0) FOR [is_super]

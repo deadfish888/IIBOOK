@@ -47,16 +47,12 @@
         .content{
             background-color: whitesmoke;
         }
-
-
-
-
     </style>
     <body class="is-preload">
         <div id ="wrapper">
             <!--Header-->
             <header id="header">
-                <div class="inner text-left">
+                <div class="inner">
 
                     <!-- Logo -->
                     <a href="./Home" class="logo">
@@ -75,9 +71,9 @@
 
             <!--Menu-->
             <nav id="menu">
-                <h2>Menu</h2>
+                <h2><a href="./User" >${user==null? "Menu": ("Welcome ")}${user.getName()}</a></h2>
                 <ul>
-                    <li><a href="#">Welcome ${sessionScope.user.getName()}</a></li>
+                    <li></li>
                     <li><a href="./Home" class="active">Home</a></li>
                     <li><a href="./Book?id=0">Bookshelf</a></li>
                     <li><a href="./Cart">Cart</a></li>
@@ -193,10 +189,6 @@
                         margin: 0 0;
                         padding: 20px 0px;
                     }
-                    .inner{
-                        text-align: center;
-                        margin-left: 300px;
-                    }
                 </style>
 
                 <div class="change password" id="change_password">
@@ -242,7 +234,7 @@
                                     <!-- /.input group -->
                                 </div>
                                 <br />
-                                <div class="row">
+<!--                                <div class="row">
                                     <div class="col-xs-12 col-sm-3 col-md-3">
                                         <label>Confirm Password</label>
                                     </div>
@@ -255,8 +247,8 @@
                                                    placeholder="Re-enter the New Password" type="password" required>
                                         </div>
                                     </div>
-                                    <!-- /.input group -->
-                                </div>
+                                     /.input group 
+                                </div>-->
 
                                 <div class="button_changepass">
                                     <button type="submit" name="submit" value="Submit">Save</button>
@@ -290,7 +282,7 @@
                         </div>
                     </footer>
                 </div>
-
+        </div>
                 <!-- Scripts -->
                 <script src="assets/js/jquery.min.js"></script>
                 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>

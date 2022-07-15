@@ -53,10 +53,10 @@
                                         <label class="form-control-placeholder" for="password">Password</label>
                                         <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                                     </div>
-                                    <div class="form-group">
-                                        <input id="password-field" id="confirm_password" type="password" class="form-control" required>
-                                        <label class="form-control-placeholder" for="re_password">Confirm Password</label>
-                                    </div>
+                                    <!--                                    <div class="form-group">
+                                                                            <input id="password-field" id="confirm_password" type="password" class="form-control" required>
+                                                                            <label class="form-control-placeholder" for="re_password">Confirm Password</label>
+                                                                        </div>-->
                                     <div class="form-group">
                                         <input type="text" name="phone" class="form-control" value="${in4.getPhone()}" required>
                                         <label class="form-control-placeholder" for="phone">Phone</label>
@@ -65,8 +65,8 @@
                                         <input type="text" name="name" class="form-control" value="${in4.getName()}" required>
                                         <label class="form-control-placeholder" for="name">Full Name</label>
                                     </div>
-                                    <div class="form-group d-md-flex">
-                                        <div class="w-50 text-left">
+                                    <div class="form-group d-md-flex " style="margin-left: 16px;">
+                                        <div class="w-25">
                                             <input id="male" type="radio" name="gender" value="Male" class="" aria-labelledby="country-option-1" aria-describedby="country-option-1" checked>
                                             <label for="male" class="block ml-2 text-sm font-medium text-gray-900">
                                                 Male
@@ -79,9 +79,14 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group" style="margin-left: 16px;">
                                         <label for="birthday" class="text-left">Birthday</label>
-                                        <input type="date" name="birthday" class="text-right" required>
+                                        <input type="date" name="birthday" class="text-right" style="
+                                               border: 1px solid gray;
+                                               border-radius: 6px;
+                                               width: 130px;
+                                               margin: 0 1em;
+                                               " required>
                                     </div>
                                     <% if (request.getAttribute("error") != null) {%>
                                     <div class="w-100">

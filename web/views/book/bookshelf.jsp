@@ -108,7 +108,7 @@
                         <c:forEach items="${books}" var="book">
                             <article class="style1">
                                 <span class="image">
-                                    <img src="${book.getImage()}" alt="" />
+                                    <img src="${book.getImage()}" alt="" style="height: 391px;"/>
                                 </span>
                                 <a href="Book?id=${book.getId()}">
                                     <h2>${book.getTitle()}</h2>

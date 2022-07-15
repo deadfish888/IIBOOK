@@ -90,6 +90,7 @@ public class CategoryDAO {
             return rs.getString(1);}
         } catch (Exception e) {
             System.out.println("getCategories Error:" + e.getMessage());
+            return null;
         }
         return null;
     }

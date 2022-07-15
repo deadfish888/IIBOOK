@@ -102,7 +102,7 @@
                                                     <td>${s.getShipper()}</td>
                                                     <td>$${s.getTotal()}</td>
                                                     <td>
-                                                        <select class="form-control" name="status" style="display: inline; width: 100px;" }>
+                                                        <select class="form-control" name="status" ${s.getStatus()=="Reject" || s.getStatus()=="Done"?"disabled":""} style="display: inline; width: 100px;" >
                                                             <option value="1" ${s.getStatus()=="Wait"?"selected":""}>Wait</option>
                                                             <option value="2" ${s.getStatus()=="Process"?"selected":""}>Process</option>
                                                             <option value="3" ${s.getStatus()=="Done"?"selected":""}>Done</option>

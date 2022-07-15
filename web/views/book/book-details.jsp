@@ -85,9 +85,14 @@
                         <div class="row" style="width: 1200px; text-align: justify;">
                             <div class="col-md-3">
                                 <img src="${book.getImage()}" class="img-fluid" alt="${book.getImage()}">
+                                <div style="text-align: center;">
+                                    <span class="fa fa-eye"></span>
+                                    <span class="title">${book.getViews()}</span>
+                                </div>
                             </div>
 
                             <div class="col-md-7">
+                                <h2 style="margin: 0 0 0.8em 0;"><i>Category: ${book.getCategory()}</i></h2>
                                 <p>
                                     ${book.getDescription()}
                                 </p>
@@ -131,7 +136,7 @@
                             <c:forEach items="${likes}" var="like">
                                 <article class="style1">
                                     <span class="image">
-                                        <img src="${like.getImage()}" alt="${like.getImage()}" />
+                                        <img src="${like.getImage()}" alt="${like.getImage()}" style="height: 391px;" />
                                     </span>
                                     <a href="Book?id=${like.getId()}">
                                         <h2>${like.getTitle()}</h2>

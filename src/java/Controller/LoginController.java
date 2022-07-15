@@ -36,11 +36,9 @@ public class LoginController extends HttpServlet {
         if (user != null) {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
-            if (user.is_super()) {
-                response.sendRedirect("./Dashboard");
-            } else {
-                response.sendRedirect(request.getParameter("origin"));
-            }
+                String origin = request.getParameter("origin");
+                if(origin.equals("")) origin="./Home";
+                response.sendRedirect(origin);
         } else {
             request.setAttribute("origin",request.getParameter("origin"));
             request.setAttribute("error", "Username or password wrong!");

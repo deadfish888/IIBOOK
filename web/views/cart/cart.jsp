@@ -85,6 +85,7 @@
             <div id="main">
                 <div class="inner">
                     <h1>Checkout</h1>
+                    <h2><i>${error}</i></h2>
                     <table>
                         <tr>
                             <th style="width: 100px;">Image</th>

@@ -5,11 +5,8 @@
 package Controller;
 
 import Model.Book;
-import Model.Category;
 import context.BookDAO;
-import context.CategoryDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;

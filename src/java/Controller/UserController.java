@@ -34,7 +34,7 @@ public class UserController extends HttpServlet {
                 user.setPhone(phone);
                 user.setAddress(address);
                 session.setAttribute("user", user);
-                request.setAttribute("mes", "Infomation changed!");
+                request.setAttribute("mes", "Information changed!");
                 break;
             case "Reset":
                 break;

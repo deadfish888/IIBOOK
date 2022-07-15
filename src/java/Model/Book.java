@@ -16,6 +16,7 @@ public class Book {
     private int discount;
     private String image;
     private String description;
+    private int views;
 
     public Book(int id, String title, String author,int categoryid, int quantity,float price, boolean issale, int discount, String image, String description) {
         this.id = id;
@@ -30,6 +31,20 @@ public class Book {
         this.description = description;
     }
 
+    public Book(int id, String title, String author, int categoryid, int quantity, float price, boolean issale, int discount, String image, String description, int views) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.categoryid = categoryid;
+        this.quantity = quantity;
+        this.price = price;
+        this.issale = issale;
+        this.discount = discount;
+        this.image = image;
+        this.description = description;
+        this.views = views;
+    }
+
     public Book(int id, String title, String author, int quantity, float price, boolean issale, int discount, String image) {
         this.id = id;
         this.title = title;
@@ -39,6 +54,14 @@ public class Book {
         this.issale = issale;
         this.discount = discount;
         this.image = image;
+    }
+
+    public int getViews() {
+        return views;
+    }
+
+    public void setViews(int views) {
+        this.views = views;
     }
 
     
@@ -129,6 +152,6 @@ public class Book {
     
     public String getCategory(){
         CategoryDAO dao =new CategoryDAO();
-        return dao.getCategory(this.categoryid);
+        return (dao.getCategory(this.categoryid)==null?"Uncategorized":dao.getCategory(this.categoryid));
     }
 }
